@@ -1,0 +1,34 @@
+$body-bg: #ffae3a;
+$font-family-monospace: 'IBM Plex Sans', sans-serif;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+html {
+  font-size: 14px;
+}
+
+.brad {
+  border-radius: 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px 0px !important;
+}
+
+.auto-marginator:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: #38250b;
+}
+
+.form-control, .form-select {
+  background-color: white;
+  border: 1px solid #d9dbde;
+  padding: .4375rem .75rem;
+}
