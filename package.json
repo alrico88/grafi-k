@@ -34,6 +34,7 @@
     "unplugin-icons": "^0.12.20",
     "vite": "^2.4.4",
     "vite-plugin-fonts": "^0.2.2",
-    "vite-plugin-pwa": "^0.11.7"
+    "vite-plugin-pwa": "^0.11.7",
+    "workbox-window": "^6.4.1"
   }
 }

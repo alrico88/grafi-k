@@ -27,6 +27,7 @@ specifiers:
   vite-plugin-pwa: ^0.11.7
   vue: ^3.0.5
   vue-i18n: ^9.2.0-beta.22
+  workbox-window: ^6.4.1
 
 dependencies:
   '@sindresorhus/is': 4.2.0
@@ -57,6 +58,7 @@ devDependencies:
   vite: 2.6.14_sass@1.43.5
   vite-plugin-fonts: 0.2.2_vite@2.6.14
   vite-plugin-pwa: 0.11.7_vite@2.6.14
+  workbox-window: 6.4.1
 
 packages:
 
