@@ -1,10 +1,13 @@
 {
   "name": "grafi-k",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
+  },
+  "repository": {
+    "url": "https://github.com/alrico88/grafi-k"
   },
   "dependencies": {
     "@sindresorhus/is": "^4.2.0",
