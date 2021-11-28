@@ -19,6 +19,9 @@ export const useStore = defineStore('index', {
     };
   },
   getters: {
+    dataIsReady(state) {
+      return state.parsedData.length > 0;
+    },
     isReady(state) {
       return !is.emptyString(state.xAxis) && !is.emptyString(state.yAxis);
     },

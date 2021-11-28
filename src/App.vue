@@ -7,11 +7,17 @@ main.d-flex.flex-column.vh-100
           .py-4
             img(src="/logo.png", height="35")
           .card.shadow
+            .card-header
+              button.btn.btn-primary.w-100(
+                type="button",
+                data-bs-toggle="modal",
+                data-bs-target="#loadModal"
+              ) #[load-icon] {{ t('loadData.ok') }}
             .card-body
+              .alert.alert-success.mb-2.p-2(
+                v-if="dataIsReady"
+              ) #[ok-icon] {{ t('loadData.ready') }}
               form
-                .form-group.mb-2.auto-marginator
-                  label.form-label #[load-icon] {{ t('params.loadData') }}
-                  input.form-control.bg-white(type="file", @change="handleFile")
                 .form-group.mb-2.auto-marginator
                   label.form-label #[title-icon] {{ t('params.chartTitle') }}
                   input.form-control.bg-white(
@@ -39,7 +45,7 @@ main.d-flex.flex-column.vh-100
                   chart-select(:options="columns", v-model:selected="yAxis")
                   .form-text {{ t('params.yAxisHelp') }}
                 .form-group.mb-2.auto-marginator
-                  .row.g-2
+                  .row.row-cols-lg-2.row-cols-1.g-2
                     .col
                       label.form-label #[series-icon] {{ t('params.series') }}
                       chart-select(:options="columns", v-model:selected="seriesAxis")
@@ -57,6 +63,7 @@ main.d-flex.flex-column.vh-100
         .col-lg-9.vh-100
           .ps-4.pt-4.pb-4.pe-2.h-100
             graph.brad.h-100.shadow
+load-modal
 </template>
 
 <script setup>
@@ -69,8 +76,8 @@ import OperationSelect from './components/OperationSelect.vue';
 import Graph from './components/Graph.vue';
 import { downloadEmitter } from './helpers/emitter';
 import { useStore } from './store';
-import DownloadIcon from '~icons/uil/image-download';
 import LoadIcon from '~icons/ic/round-file-open';
+import DownloadIcon from '~icons/uil/image-download';
 import TitleIcon from '~icons/mdi/format-text';
 import SubtitleIcon from '~icons/mdi-light/dots-horizontal';
 import XAxisIcon from '~icons/ph/arrows-out-line-horizontal';
@@ -78,13 +85,24 @@ import YAxisIcon from '~icons/ph/arrows-out-line-vertical';
 import SeriesIcon from '~icons/clarity/blocks-group-line';
 import OperationIcon from '~icons/ph/math-operations';
 import AuthorInfo from './components/AuthorInfo.vue';
+import LoadModal from './components/LoadModal.vue';
+import OkIcon from '~icons/bi/check-circle-fill';
 
 const { t } = useI18n();
 
 const store = useStore();
 
 const {
-  columns, xAxis, yAxis, seriesAxis, chartTitle, chartSubtitle, operation, chartType, sortXAxis,
+  columns,
+  xAxis,
+  yAxis,
+  seriesAxis,
+  chartTitle,
+  chartSubtitle,
+  operation,
+  chartType,
+  sortXAxis,
+  dataIsReady,
 } = storeToRefs(store);
 
 async function handleFile(event) {

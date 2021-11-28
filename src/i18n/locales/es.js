@@ -29,4 +29,10 @@ export default {
     line: 'Líneas',
     area: 'Áreas',
   },
+  loadData: {
+    fromFile: 'Desde un archivo',
+    fromText: 'Pegando texto',
+    ok: 'Cargar datos',
+    ready: 'Datos listos',
+  },
 };

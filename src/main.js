@@ -6,6 +6,7 @@ import Highcharts from 'highcharts';
 import exporting from 'highcharts/modules/exporting';
 import offlineExporting from 'highcharts/modules/offline-exporting';
 import HighchartsVue from 'highcharts-vue';
+import Modal from 'bootstrap/js/dist/modal';
 import App from './App.vue';
 import './assets/main.scss';
 import es from './i18n/locales/es';
