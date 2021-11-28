@@ -39,6 +39,9 @@ const chartOptions = computed(() => ({
     },
   },
   series: chartData.value.series,
+  legend: {
+    verticalAlign: 'top',
+  },
 }));
 
 const chart = ref(null);
