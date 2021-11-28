@@ -1,5 +1,5 @@
 $body-bg: #ffae3a;
-$font-family-monospace: 'IBM Plex Sans', sans-serif;
+$font-family-sans-serif: 'IBM Plex Sans', sans-serif;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 
@@ -20,7 +20,7 @@ html {
 }
 
 .auto-marginator:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 a {
