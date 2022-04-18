@@ -1,5 +1,20 @@
-$body-bg: #ffae3a;
+$body-bg: #FFBF7A;
 $font-family-sans-serif: 'IBM Plex Sans', sans-serif;
+
+$utilities: (
+  "height": (
+    property: height,
+    responsive: true,
+    class: h,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto
+    )
+  ),
+);
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 
@@ -31,4 +46,9 @@ a {
   background-color: white;
   border: 1px solid #d9dbde;
   padding: .4375rem .75rem;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+  overflow-x: hidden !important;
 }
