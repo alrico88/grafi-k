@@ -1,34 +1,39 @@
 <template lang="pug">
-select.form-select(v-model="operation")
-  option(
-    v-for="option of operations",
-    :key="option.value",
-    :value="option.value"
-  ) {{ option.text }}
+b-form-select(v-model='store.operation', :options='operations')
 </template>
 
-<script setup>
-import { storeToRefs } from 'pinia';
+<script setup lang="ts">
+import { BFormSelect } from 'bootstrap-vue-next';
 import { useI18n } from 'vue-i18n';
 import { useStore } from '../store';
 
 const { t } = useI18n();
 
 const store = useStore();
-const { operation } = storeToRefs(store);
 
 const operations = [
   {
-    text: t('operations.sum'),
+    text: t('sum'),
     value: 'sum',
   },
   {
-    text: t('operations.mean'),
+    text: t('mean'),
     value: 'mean',
   },
   {
-    text: t('operations.median'),
+    text: t('median'),
     value: 'median',
   },
 ];
 </script>
+
+<i18n lang="yaml">
+en:
+  sum: Sum
+  mean: Mean
+  median: Median
+es:
+  sum: Suma
+  mean: Media
+  median: Mediana
+</i18n>

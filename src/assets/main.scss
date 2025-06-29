@@ -1,25 +1,15 @@
-$body-bg: #FFBF7A;
-$font-family-sans-serif: 'IBM Plex Sans', sans-serif;
-
-$utilities: (
-  "height": (
-    property: height,
-    responsive: true,
-    class: h,
-    values: (
-      25: 25%,
-      50: 50%,
-      75: 75%,
-      100: 100%,
-      auto: auto
-    )
-  ),
-);
-
-@import 'node_modules/bootstrap/scss/bootstrap';
+$bgColor: #a96462;
+$contrastColor: #f2e2c6;
 
 html {
   font-size: 14px;
+  font-family: 'IBM Plex Sans', sans-serif !important;
+  background-color: $bgColor !important;
+}
+
+body {
+  background-color: $bgColor !important;
+  color: $contrastColor !important;
 }
 
 .brad {
@@ -39,16 +29,5 @@ html {
 }
 
 a {
-  color: #38250b;
-}
-
-.form-control, .form-select {
-  background-color: white;
-  border: 1px solid #d9dbde;
-  padding: .4375rem .75rem;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
-  overflow-x: hidden !important;
+  color: $contrastColor !important;
 }

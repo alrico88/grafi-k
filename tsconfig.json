@@ -1,0 +1,9 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "vueCompilerOptions": {
+    "plugins": ["@vue/language-plugin-pug"]
+  },
+  "compilerOptions": {
+    "types": ["unplugin-icons/types/vue"]
+  }
+}

@@ -1,12 +1,11 @@
 <template lang="pug">
-.form-floating
-  select.form-select.bg-white#chartTypeSelect(v-model="chartType")
-    option(v-for="option of types", :value="option.value", :key="option.value") {{ option.text }}
-  label.form-label(for="chartTypeSelect") #[type-icon] {{ t('params.chartType') }}
+b-form-group
+  template(#label) #[type-icon] {{ t('chartType') }}
+  b-form-select(v-model='store.chartType', :options='types')
 </template>
 
-<script setup>
-import { storeToRefs } from 'pinia';
+<script setup lang="ts">
+import { BFormGroup, BFormSelect } from 'bootstrap-vue-next';
 import { useI18n } from 'vue-i18n';
 import { useStore } from '../store';
 import TypeIcon from '~icons/mdi/chart-bar';
@@ -15,20 +14,31 @@ const { t } = useI18n();
 
 const store = useStore();
 
-const { chartType } = storeToRefs(store);
-
 const types = [
   {
-    text: t('chartTypes.line'),
+    text: t('line'),
     value: 'line',
   },
   {
-    text: t('chartTypes.column'),
+    text: t('column'),
     value: 'column',
   },
   {
-    text: t('chartTypes.area'),
+    text: t('area'),
     value: 'area',
   },
 ];
 </script>
+
+<i18n lang="yaml">
+en:
+  chartType: Chart type
+  line: Line
+  column: Column
+  area: Area
+es:
+  chartType: Tipo de gráfica
+  line: Línea
+  column: Columna
+  area: Area
+</i18n>
